@@ -40,7 +40,9 @@ for i in $MASK; do
   if [ ! -e "$i.djvu" ]; then
     echo "$i"
     #cpaldjvu -dpi $DPI -colors $NCOLORS $i $i.djvu
-    c44 -dpi 720 -bpp 0.4,0.5,0.5 "$i" "$i.djvu"
+    #c44 -dpi 720 -bpp 0.4,0.5,0.5  "$i" "$i.djvu"
+    #for higher quality black and white comics
+    c44 -dpi 720 -bpp 0.4,0.5,0.7,1 "$i" "$i.djvu"
   fi
   #j=`basename $i .jpg.djvu`
   if [ ! -e $OUTPUT ]; then
