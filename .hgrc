@@ -1,0 +1,77 @@
+[ui]
+#logtemplate = '\033[33mchangeset:   r{rev} : {node} : {tags} : {heads}\033[0m\nuser:        {author} [on {date|isodate}] \n\033[33mmessage:\033[0m     {desc}\n\n'
+logtemplate = '\033[33mrevision|hash|tag|head:\033[0m r{rev} | {node} | {tags} | {heads}\n\033[33muser: \033[0m{author} [on {date|isodate}] \033[0m\n\033[33mmessage:\033[0m {desc}\n\n'
+
+#short form logtemplate
+#logtemplate = '\033[33mchangeset:   {rev}:{node|short}\033[0m\nuser:        {author}\ndate:        {date|isodate}\ntags:       {tags}\n\033[33mmessage:\033[0m\n{desc}\n--------------------------------------------------------------------\n\n'
+username=Sandeep Srinivasa <sss@nomalap.com>
+
+[defaults]
+qimport = --git
+qrefresh = --git
+annotate = -nu
+heads = --style default
+serve = -v
+outgoing = --graph
+# --graph is breaking incoming, need to investigate
+# incoming =  --graph
+diff = -p
+commit = --verbose
+
+[extensions]
+rebase = 
+convert=
+extdiff=
+graphlog=
+record=
+color=
+pager=
+hgext.progress=
+hgext.pager= 
+hgext.churn=
+hgext.bookmarks =
+#hggit =
+
+[progress]
+delay = 1.5
+
+[pager]
+pager = LESS='FSRX' less
+attend = annotate, cat, diff, export, glog, log, qdiff
+
+[alias]
+r = pull --rebase --update
+
+[diff]
+kdiff=True
+
+[extdiff]
+cmd.d = kompare
+cmd.sbsdiff  = diff
+opts.sbsdiff = -N -b --side-by-side --width=90
+
+[merge-tools]
+# Override stock tool location
+kdiff3.executable = ~/bin/kdiff3
+# Specify command line
+#kdiff3.args = $base $local $other -o $output
+kdiff3.args = -m --L1 "Remote"  --L2 "Base" --L3 "Mine" -o $output $other $base $local
+# Give higher priority
+kdiff3.priority = 1
+
+[color]
+status.modified = blue bold underline
+status.added = green bold
+status.removed = red bold
+status.deleted = cyan bold underline
+status.unknown = magenta bold underline
+status.ignored = magenta bold
+diff.diffline = magenta
+diff.extended = cyan bold
+diff.file_a = red bold
+diff.file_b = green bold
+diff.hunk = magenta
+diff.deleted = red
+diff.inserted = green
+diff.changed = white
+diff.trailingwhitespace = bold red_background
