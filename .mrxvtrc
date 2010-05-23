@@ -1,0 +1,41 @@
+#mrxvt*font: Monaco
+mrxvt*depth: 32
+mrxvt*foreground: #eeeeee
+mrxvt*background: #1a1a1a
+mrxvt*geometry: 100x30
+mrxvt*visualBell: True
+mrxvt*saveLines: 1000
+mrxvt*termName: rxvt 
+#mrxvt*termName: terminal
+mrxvt*loginShell: True
+#mrxvt*fullscreen: True
+mrxvt*scrollbarStyle: next
+mrxvt*scrollbarRight:True
+mrxvt*scrollbarStyle:rxvt
+mrxvt*hotkey*NextTab:Ctrl+Tab
+mrxvt*xft: True
+#Mrxvt.xftFont:  		Envy Code R
+#Mrxvt.xftFont:  	  Inconsolata	
+Mrxvt.xftFont:  	  Monofur
+#Mrxvt.xftFont:  		Bitstream Vera Sans Mono
+#Mrxvt.xftFont:  		Consolas
+mrxvt*xftSize:13
+#mrxvt*xftAntialias:False
+mrxvt*color0:         #1a1a1a
+mrxvt*color1:         #ba8b8b
+mrxvt*color2:         #86af80
+mrxvt*color3:         #c6d01e
+mrxvt*color4:         #3c8ec4
+mrxvt*color5:         #9a70b2
+mrxvt*color6:         #9fc1cc
+mrxvt*color7:         #c6c6c6
+mrxvt*color8:         #71a3b7
+mrxvt*color9:         #e5505f
+mrxvt*color10:        #8cba87
+mrxvt.color11:        #e0d95c
+mrxvt*color12:        #5899c4
+mrxvt.color13:        #ad73ba
+mrxvt*color14:        #338eaa
+mrxvt*color15:        #f7f7f2
+mrxvt.macro.Ctrl+Shift+underscore:  Dummy
+mrxvt.macro.Ctrl+Shift+plus:  Dummy
