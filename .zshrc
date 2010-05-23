@@ -109,6 +109,8 @@ alias sbcl='/home/user/research/lisp/sbcl-1.0.29/release/bin/sbcl'
 alias sg='cd /home/user/clearsenses/jambool/REPO/socialgold'
 alias jm='cd /home/user/clearsenses/jambool/REPO/jambool'
 alias api='cd /home/user/clearsenses/jambool/REPO/api'
+#copy with progress bar
+alias cp='rsync -aP'
 
 #exports
 #path=(/home/user/clearsenses/ruby-1.9.1-p243/release/bin $path)
