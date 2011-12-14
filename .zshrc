@@ -30,6 +30,10 @@ ${RED}%n${YELLOW}@${BLUE}%U%m%u$%(!.#.$) "
     export RPS1="${YELLOW}%1v${NORM}"
 fi
 
+# colorize all stderr red 
+# test using "echo sss 1>&2"
+exec 2>>(while read line; do print '\e[91m'${(q)line}'\e[0m' > /dev/tty; print -n $'\0'; done &)
+
 # format titles for screen and rxvt
 function title() {
   # escape '%' chars in $1, make nonprintables visible
@@ -97,6 +101,7 @@ alias vim='gvim'
 alias ssh-linode='ssh -l clearsenses li44-22.members.linode.com'
 alias ssh-nsmg-core='ssh clearsenses@64.85.169.69'
 alias ssh-clearsenses-core='ssh clearsenses@64.85.167.191'
+alias ssh-pp='ssh  SSrinivasa@10.70.15.43 -p27000'
 alias ssh-nsmg='ssh -l nsmg li50-150.members.linode.com'
 alias ssh-darthvader='ssh -l clearsenses 192.168.1.12'
 export SBCL_HOME=/home/user/research/lisp/sbcl-1.0.29/release/lib/sbcl/
@@ -115,15 +120,20 @@ alias cp='rsync -aP'
 #exports
 #path=(/home/user/clearsenses/ruby-1.9.1-p243/release/bin $path)
 #path=(/home/user/clearsenses/ruby-1.8.6-p383/release/bin $path)
-path=(/home/user/clearsenses/ruby-enterprise-1.8.7-20090928/release/bin $path)
+path=(/home/sandeep/research/rubinius/release/bin $path)
 export PATH
-export RUBYLIB=/home/user/clearsenses/ruby-1.8.6-p383/release/lib
+#export RUBYLIB=/home/user/clearsenses/ruby-1.8.6-p383/release/lib
 #export GEM_HOME=/home/user/research/doublecheq/GEMS
-export GEM_HOME=/home/user/clearsenses/JAMBOOL_GEMS
+export GEM_HOME=/home/sandeep/GEMS
 #export GEM_HOME=/home/user/clearsenses/GEMS-1.8
 export GEM_PATH=$GEM_HOME
 export RUBY_SOURCE_DIR=/home/user/clearsenses/ruby-enterprise-1.8.7-20090928/source/
 path=($GEM_PATH/bin $path)
+
+alias ruby='rbx'
+alias gem='rbx -S gem'
+alias rake='rbx -S rake'
+alias irb='rbx -S irb'
 
 #variables that need to be set for intellij - Ubuntu
 export JDK_HOME=/usr/lib/jvm/java-6-sun-1.6.0.15/
