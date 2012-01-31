@@ -32,7 +32,7 @@ fi
 
 # colorize all stderr red 
 # test using "echo sss 1>&2"
-exec 2>>(while read line; do print '\e[91m'${(q)line}'\e[0m' > /dev/tty; print -n $'\0'; done &)
+#exec 2>>(while read line; do print '\e[91m'${(q)line}'\e[0m' > /dev/tty; print -n $'\0'; done &)
 
 # format titles for screen and rxvt
 function title() {
@@ -104,6 +104,16 @@ alias ssh-clearsenses-core='ssh clearsenses@64.85.167.191'
 alias ssh-pp='ssh  SSrinivasa@10.70.15.43 -p27000'
 alias ssh-nsmg='ssh -l nsmg li50-150.members.linode.com'
 alias ssh-darthvader='ssh -l clearsenses 192.168.1.12'
+alias ssh-tradus-dev='ssh sss@10.100.2.214'
+alias ssh-tradus-prod-115='ssh SSrinivasa@10.70.11.115 -p27000'
+alias ssh-tradus-prod-search-40='ssh SSrinivasa@10.70.41.40 -p27000'
+alias ssh-tradus-prod-search-27='ssh SSrinivasa@10.70.41.27 -p27000'
+alias ssh-tradus-prod-116='ssh SSrinivasa@10.70.11.116 -p27000'
+alias ssh-tradus-ppclub='ssh SSrinivasa@10.70.15.43 -p27000'
+alias mysql-prod-22-slave='mysql --host=10.70.41.22  --port=3306 -A --user=sandeep -p'
+alias mysql-prod-24-master='mysql --host=10.70.41.24  --port=3306 -A --user=sandeep -p'
+alias mysql-prod-26-slave='mysql --host=10.70.41.26  --port=3306 -A --user=sandeep -p'
+
 export SBCL_HOME=/home/user/research/lisp/sbcl-1.0.29/release/lib/sbcl/
 export SCALA_HOME=/usr
 # for webcam
@@ -124,16 +134,16 @@ path=(/home/sandeep/research/rubinius/release/bin $path)
 export PATH
 #export RUBYLIB=/home/user/clearsenses/ruby-1.8.6-p383/release/lib
 #export GEM_HOME=/home/user/research/doublecheq/GEMS
-export GEM_HOME=/home/sandeep/GEMS
+export GEM_HOME=/home/user/GEMS
 #export GEM_HOME=/home/user/clearsenses/GEMS-1.8
 export GEM_PATH=$GEM_HOME
 export RUBY_SOURCE_DIR=/home/user/clearsenses/ruby-enterprise-1.8.7-20090928/source/
 path=($GEM_PATH/bin $path)
 
-alias ruby='rbx'
-alias gem='rbx -S gem'
-alias rake='rbx -S rake'
-alias irb='rbx -S irb'
+#alias ruby='rbx'
+#alias gem='rbx -S gem'
+#alias rake='rbx -S rake'
+#alias irb='rbx -S irb'
 
 #variables that need to be set for intellij - Ubuntu
 export JDK_HOME=/usr/lib/jvm/java-6-sun-1.6.0.15/
@@ -169,6 +179,10 @@ zle -N tcsh-backward-delete-word
 zle -N tcsh-backward-word
 zle -N tcsh-forward-word
 
+
+bindkey "^[[A" history-beginning-search-backward
+bindkey "^[[B" history-beginning-search-forward
+
 # for escape backspace (delete a word) behavior similar to tcsh
 bindkey '\e^?' tcsh-backward-delete-word
 #for ctrl leftarrow and rightarrow navigation 
@@ -191,3 +205,8 @@ bindkey ';5C' tcsh-forward-word
 #}
 #
 #rsync -tzhhP rsync://cdimage.ubuntu.com/cdimage/daily/20090420.1/jaunty-alternate-i386.iso .
+
+if [[ -s "$HOME/.rvm/scripts/rvm" ]]
+  then
+    source "$HOME/.rvm/scripts/rvm"
+fi
