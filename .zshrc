@@ -2,6 +2,8 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=100000
+#INC_APPEND_HISTORY
+#EXTENDED_HISTORY
 setopt appendhistory autocd extendedglob
 setopt EXTENDED_HISTORY		# puts timestamps in the history
 
@@ -126,6 +128,8 @@ alias jm='cd /home/user/clearsenses/jambool/REPO/jambool'
 alias api='cd /home/user/clearsenses/jambool/REPO/api'
 #copy with progress bar
 alias cp='rsync -aP'
+alias rvmdo='rvm jruby-1.6.7 do  jruby "--1.9" -S '
+alias git-tags='git for-each-ref --format="%(taggerdate) [%(taggername)]: %(refname)" --sort=taggerdate refs/tags'
 
 #exports
 #path=(/home/user/clearsenses/ruby-1.9.1-p243/release/bin $path)
@@ -210,3 +214,5 @@ if [[ -s "$HOME/.rvm/scripts/rvm" ]]
   then
     source "$HOME/.rvm/scripts/rvm"
 fi
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
