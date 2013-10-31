@@ -140,8 +140,8 @@ nnoremap <silent> <c-l> :nohl<cr><c-l>
 "set guifont=Consolas:h11:cANSI
 "set guifont=Monaco\ 10
 "set guifont=Terminus/12/-1/5/50/0/0/0/0/0
-"set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
-set guifont=Anonymous\ Pro\ 12
+set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
+"set guifont=Anonymous\ Pro\ 12
 "set guifont=Inconsolata\ 12
 "set guifont=Terminus\ 13
 "colorscheme zenburn
@@ -154,8 +154,15 @@ set guifont=Anonymous\ Pro\ 12
 "colorscheme molokai
 
 "colorscheme xoria256
-colorscheme inspiration694250
+"colorscheme inspiration694250
 "colorscheme argonaut 
+
+let g:sienna_style = 'dark'
+colorscheme desert 
+
+"set background=dark
+"set g:solarized_termcolors=256
+"colorscheme solarized
 
 
 "the following comment functions allow you to highlight a section
@@ -190,4 +197,39 @@ autocmd FileType tcl,perl,python,ruby call PythonCommentMap()
 ""map ,f :set foldmethod=indent<cr>zM<cr>
 ""map ,F :set foldmethod=manual<cr>zR<cr>
 
- 
+" filetypes
+au BufRead,BufNewFile *.pp            set filetype=puppet
+au FileType puppet      set expandtab
+
+" in Ruby and Scala, we use spaces (two) instead of tabs
+au BufRead,BufNewFile *.rb,*.scala,*.clj set et sw=2 sts=2 ts=2 expandtab
+" in Python, we use spaces (four) instead of tabs
+au BufRead,BufNewFile *.py set et
+" these are re-specified to avoid issues with having files of different types
+" open. there is probably a better way to do this. which is good, because this
+" list of filetypes isn't anywhere near exhaustive.
+au BufRead,BufNewFile *.css,*.c,*.java,*.html*,*.js set noet sw=4 sts=4 ts=4 
+
+
+" up/down move between visual lines instead of actual lines when wrapped
+"imap <silent> <Down> <C-o>gj
+"imap <silent> <Up> <C-o>gk
+"nmap <silent> <Down> gj
+"nmap <silent> <Up> gk
+
+" FuzzyFinder
+let g:fuf_modesDisable = []
+let g:fuf_enumeratingLimit = 30
+let g:fuf_ignoreCase = 0
+let g:fuf_keyOpenSplit = '<C-m>'
+
+
+nnoremap ,ff :FufBuffer<CR>
+nnoremap ,fi :FufFile<CR>
+nnoremap ,fd :FufDir<CR>
+nnoremap ,fm :FufMruFile<CR>
+nnoremap ,fc :FufMruCmd<CR>
+nnoremap ,fb :FufBookmark<CR>
+nnoremap ,fa :FufAddBookmark<CR>
+nnoremap ,ft :FufTag<CR>
+nnoremap ,fg :FufTaggedFile<CR>
