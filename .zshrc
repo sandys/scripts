@@ -1,3 +1,7 @@
+ZSH=$HOME/.oh-my-zsh
+plugins=(history-substring-search)
+source $ZSH/oh-my-zsh.sh
+
 # history
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
@@ -231,3 +235,10 @@ bindkey ';5C' tcsh-forward-word
 
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && \. "$HOME/.rvm/scripts/rvm"
 eval "$(rbenv init -)"
+
+#depends on history-substring-search plugin
+zle -N history-substring-search-up
+zle -N history-substring-search-down
+
+bindkey '\e[A' history-substring-search-up
+bindkey '\e[B' history-substring-search-down
