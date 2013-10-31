@@ -1,4 +1,4 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/user/stuff/trac/test2/log'
-let g:netrw_dirhist_2='/tmp/kde-user/plasmapkgfrKJVe'
+let g:netrw_dirhist_1='/home/user/Code/hadoop/StormWordCount2/src/main/java/topology'
+let g:netrw_dirhist_2='/home/user/Code/adshop/printerplusplus/Installers/PrinterPlusPlusSetupCustomAction'
