@@ -92,7 +92,8 @@ fi
 alias ll="ls -l"
 alias ..='cd ..'
 alias .='pwd'
-alias grep='grep -E --color=always'
+alias grep='noglob grep -E --color=always'
+alias find='noglob find'
 alias vim='gvim'
 alias ssh-linode='ssh -l clearsenses li44-22.members.linode.com'
 alias ssh-nsmg-core='ssh clearsenses@64.85.169.69'
@@ -147,7 +148,7 @@ alias curl='noglob'
 #exports
 #path=(/home/user/clearsenses/ruby-1.9.1-p243/release/bin $path)
 #path=(/home/user/clearsenses/ruby-1.8.6-p383/release/bin $path)
-export RUBYLIB=/home/user/clearsenses/ruby-1.8.6-p383/release/lib
+#export RUBYLIB=/home/user/clearsenses/ruby-1.8.6-p383/release/lib
 #export GEM_HOME=/home/user/research/doublecheq/GEMS
 #export GEM_HOME=/home/user/clearsenses/JAMBOOL_GEMS
 #export GEM_HOME=/home/user/clearsenses/GEMS_Aug_2010
