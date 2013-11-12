@@ -7,7 +7,7 @@ set showcmd
 set laststatus=2
 set ttyfast           " Indicates a fast terminal connection
 "set statusline=%=%f\ \"%F\"\ %m%R\ [%4l(%3p%%):%3c-(0x%2B,\0%2b),%Y,%{&encoding}]
-set statusline=%=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [HEX=\%02.2B]\ [POS=%04l,%04v][%p%%]\ [LEN=%L]
+set statusline=%=%F%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b\ HEX=\%02.2B]\ [COL=%04l,ROW=%04v][%p%%]\ [LEN=%L]
 
 set tabstop=2
 set shiftwidth=2
