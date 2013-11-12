@@ -1,4 +1,5 @@
 set ic
+se nu
 set autoindent
 set nocompatible
 set ruler
@@ -135,6 +136,7 @@ nnoremap <silent> <c-l> :nohl<cr><c-l>
 :map <C-S-n> <ESC>:tabnew<cr>
 
 
+
 "colors default
 "syntax on
 "set guifont=Consolas:h11:cANSI
@@ -159,6 +161,12 @@ set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
 
 let g:sienna_style = 'dark'
 colorscheme desert 
+
+"make sure this section always comes AFTER colorscheme
+" Without color scheme, set line colors to grey
+"hi LineNr         ctermfg=DarkMagenta guifg=#2b506e guibg=#000000 
+"hi LineNr    term=bold  guifg=#2b506e ctermfg=#2b506e guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
+hi LineNr term=BOLD cterm=NONE ctermfg=darkgrey ctermbg=NONE guifg=#2b506e guibg=NONE
 
 "set background=dark
 "set g:solarized_termcolors=256
@@ -197,14 +205,27 @@ autocmd FileType tcl,perl,python,ruby call PythonCommentMap()
 ""map ,f :set foldmethod=indent<cr>zM<cr>
 ""map ,F :set foldmethod=manual<cr>zR<cr>
 
+" Delete trailing white space, useful for Python ;)
+func! DeleteTrailingWS()
+  exe "normal mz"
+  %s/\s\+$//ge
+  exe "normal `z"
+endfunc
+
+
+
 " filetypes
 au BufRead,BufNewFile *.pp            set filetype=puppet
 au FileType puppet      set expandtab
+
+" Auto-save on losing focus
+au FocusLost * :wa
 
 " in Ruby and Scala, we use spaces (two) instead of tabs
 au BufRead,BufNewFile *.rb,*.scala,*.clj set et sw=2 sts=2 ts=2 expandtab
 " in Python, we use spaces (four) instead of tabs
 au BufRead,BufNewFile *.py set et
+autocmd BufWrite *.py :call DeleteTrailingWS()
 " these are re-specified to avoid issues with having files of different types
 " open. there is probably a better way to do this. which is good, because this
 " list of filetypes isn't anywhere near exhaustive.
