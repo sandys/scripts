@@ -1,0 +1,10 @@
+This is the restart-entry extension, a very simple GNOME Shell extension that
+adds a "Restart Shell..." functionality with a confirmation dialog to the user's
+menu. The dialog also contains an option that lets users reload the current
+theme only, without having to restart the whole Shell.
+
+In case you didn't get your copy of this extension from github, you can find its
+original repository at the following url:
+
+https://github.com/asant/gnome-shell-extension-restart-entry
+

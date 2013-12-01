@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="battery-remaining-time">
+  <schema path="/org/gnome/shell/extensions/battery-remaining-time/" id="org.gnome.shell.extensions.battery-remaining-time">
+    <key type="b" name="showicon">
+      <default>true</default>
+      <summary>Show/Hide the icon</summary>
+      <description>Show or hide the icon near the text. Set true or false.</description>
+    </key>
+    <key type="b" name="showarrowoncharge">
+      <default>true</default>
+      <summary>Show/Hide the arrow</summary>
+      <description>Show or hide the arrow near the text when charging. Set true or false.</description>
+    </key>
+    <key type="b" name="showpercentage">
+      <default>true</default>
+      <summary>Show/Hide the percentage</summary>
+      <description>Show or hide the percentage near the time. Set true or false.</description>
+    </key>
+    <key type="b" name="showtime">
+      <default>true</default>
+      <summary>Show/Hide the time</summary>
+      <description>Show or hide the time near the icon. Set true or false.</description>
+    </key>
+    <key type="b" name="showoncharge">
+      <default>true</default>
+      <summary>Show/Hide when charging</summary>
+      <description>Show or hide at all when charging. Set true or false.</description>
+    </key>
+    <key type="b" name="showonfull">
+      <default>true</default>
+      <summary>Show/Hide when full</summary>
+      <description>Show or hide at all when full. Set true or false.</description>
+    </key>
+    <key type="b" name="debug">
+      <default>false</default>
+      <summary>Show/Hide debug messages</summary>
+      <description>Show or hide debug messages in Looking Glass. Set true or false.</description>
+    </key>
+  </schema>
+</schemalist>

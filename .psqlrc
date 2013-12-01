@@ -1,0 +1,12 @@
+\pset expanded auto
+\timing
+\encoding unicode
+\set PROMPT1 '%[%033[00;36m%]%n:%[%033[00;35m%]%~ \n%[%033[00;33m%]%R%#%[%033[0m%] '
+\set PROMPT2 '%R%# '
+\set HISTFILE ~/.psql_history- :HOST - :DBNAME
+\pset border 2
+\pset format wrapped
+\pset linestyle unicode
+\pset null null
+\pset pager
+SET search_path=public,postgis

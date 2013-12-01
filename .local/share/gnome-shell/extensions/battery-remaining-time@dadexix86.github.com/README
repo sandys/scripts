@@ -1,0 +1,54 @@
+######       Battery Remaining Time extension for gnome-shell          #######
+
+This extension show the time remaining of your battery near the icon. 
+It shows the time remaining to full discharge when unplugged and the time to 
+full charge when plugged to AC.
+
+There is a first attempt to manage multiple batteries, but I don't know if 
+it works because my laptop has only one.
+
+There are other options available, look under here in *SETTINGS*
+
+Please report any bug and issue to 
+        https://github.com/dadexix86/battery-remaining-time/issues
+or, if you prefer (but it is possible that I don't read my email for a 
+while), by mail to
+                        dadexix86@gmail.com
+
+*SETTINGS*
+All the settings are now update to gsettings and are 
+configurable via the gnome-shell-extension-prefs.
+
+They are 7.
+_Show the arrow_
+If true show the arrow near the text when charging. (default: ON)
+
+_Show the percentage_
+If true show the percentage near the icon. (default: ON)
+
+_Show the time_
+If true show the time near the percentage. (default: ON)
+
+_Show when charging._
+If true show the remaining time when charging. (default: ON)
+
+_Show when full_
+If true show when full. (default: ON)
+
+_Show the icon. Needs reload_
+If true show the icon near the text. (default: ON)
+Unfortunately, needs reload to show the icon again after disabling it.
+
+_Debug mode. Needs reload_
+If true show debug messages in Looking Glass. (default: OFF)
+This needs reload because some debug messages are shown before settings.
+
+
+*Credits*
+This extension for gnome-shell was once based on the battery-percentage-indicator
+extension by paravoid.
+In time I used a lot of code borrowed from some other extensions.
+
+This is licensed under a GPL2, which was provided to you with the extension.
+If it wasn't, you can find it here
+                http://www.gnu.org/licenses/gpl-2.0.txt
