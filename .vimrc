@@ -13,7 +13,7 @@ set tabstop=2
 set shiftwidth=2
 
 " Bad... slows stuff down to a crawl
-"filetype plugin indent on
+filetype plugin indent on
 
 " Do clever indent things. Don't make a # force column zero.
 set autoindent
@@ -21,11 +21,14 @@ set smartindent
 inoremap # X<BS>#
 
 set smarttab
+set ts=2
+set sw=2
 set expandtab
 set hlsearch
 set incsearch
 set nowrap
 set showfulltag
+set scrolloff=5
 " Wrap on these
 "set listchars+=precedes:<,extends:>
 set whichwrap+=<,>,[,]
@@ -142,8 +145,8 @@ nnoremap <silent> <c-l> :nohl<cr><c-l>
 "set guifont=Consolas:h11:cANSI
 "set guifont=Monaco\ 10
 "set guifont=Terminus/12/-1/5/50/0/0/0/0/0
-set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
-"set guifont=Anonymous\ Pro\ 12
+"set guifont=Bitstream\ Vera\ Sans\ Mono\ 11
+set guifont=Anonymous\ Pro\ 12
 "set guifont=Inconsolata\ 12
 "set guifont=Terminus\ 13
 "colorscheme zenburn
@@ -167,6 +170,7 @@ colorscheme desert
 "hi LineNr         ctermfg=DarkMagenta guifg=#2b506e guibg=#000000 
 "hi LineNr    term=bold  guifg=#2b506e ctermfg=#2b506e guibg=NONE ctermbg=NONE gui=NONE cterm=NONE
 hi LineNr term=BOLD cterm=NONE ctermfg=darkgrey ctermbg=NONE guifg=#2b506e guibg=NONE
+hi CursorLineNr   term=bold ctermfg=Yellow gui=bold guifg=Green
 
 "set background=dark
 "set g:solarized_termcolors=256
