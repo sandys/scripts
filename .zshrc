@@ -96,7 +96,7 @@ fi
 alias ll="ls -l"
 alias ..='cd ..'
 alias .='pwd'
-alias grep='noglob grep -E --color=always'
+alias grep='grep -E --color=always'
 alias find='noglob find'
 alias vim='gvim'
 alias ssh-linode='ssh -l clearsenses li44-22.members.linode.com'
