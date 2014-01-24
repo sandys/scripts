@@ -75,12 +75,13 @@ def write_repo(body, sha2, origin=false)
         %x(git fetch origin >/dev/null 2>/dev/null)
   	%x(git reset --hard origin/master >/dev/null)
     else
-    puts "winning #{sha2} body = " +body 
+    puts "winning #{sha2} body = " +body+ " git hash = " +  %x[bash -c 'git hash-object -t commit --stdin <<< \"#{body}\"']
     #puts sha2 
     %x[bash -c 'git hash-object -t commit -w --stdin <<< \"#{body}\"']
     #puts sha1
     puts %x[git reset --hard "#{sha2}"]
     puts %x[git push origin master ] 
+  	%x(git reset --hard origin/master >/dev/null)
 
   
     end
@@ -135,6 +136,7 @@ committer CTF user <me@example.com> #{$timestamp} +0000
 
 Give me a Gitcoin
 " 
+
 end
 
 def solve2
@@ -165,13 +167,15 @@ while 1 do
   modified_body = body + "\n"
   #sha1=%x[bash -c 'git hash-object -t commit --stdin <<< \"#{body}\"']
   sha2=Digest::SHA1.hexdigest ("commit #{modified_body.length}\0" + modified_body)
-	 
+	
+=begin
 	 if counter%MIL == 0
 	 time_delta = Time.now.utc.to_i - time_start
          hash_rate = MIL/time_delta
 	  puts " sha2 " + sha2 + " rate = #{hash_rate}" 
 	  time_start = Time.now.utc.to_i
 	end 
+=end
   if sha2 <= $curr_diff
    puts "WIN - #{sha2}"
     g.write_repo(body,sha2)        
